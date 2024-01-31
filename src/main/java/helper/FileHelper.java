@@ -8,37 +8,38 @@ import java.io.FileWriter;
 public class FileHelper {
 
 	public static boolean createFileText(String path, String content) {
+		System.out.println("Creando archivo de texto...");
+		System.out.println();
 		
-		try (FileWriter file = new FileWriter(path); BufferedWriter bw = new BufferedWriter(file)){
-			System.out.println("Creando archivo de texto...");
+		try (FileWriter file = new FileWriter(path); BufferedWriter bw = new BufferedWriter(file)){			
 			file.write(content);
+			System.out.println("> Archivo creado con éxito");
 			return true;
 		} catch (Exception e) {
-			// TODO: handle exception
-			System.err.println("Error! > crear archivo en " + path);
+			System.err.println("Error! al crear archivo en " + path);
+			e.printStackTrace();
 		}
 		
 		return false;
 	}
 	
 	public static String loadFileText(String path) {
+		System.out.println("Cargando archivo de texto...");
 		
-		try (FileReader file = new FileReader(path); BufferedReader br = new BufferedReader(file)){
-			System.out.println("Cargando archivo de texto...");
+		
+		try (FileReader file = new FileReader(path); BufferedReader br = new BufferedReader(file)){			
 			String reader = br.readLine();
 			String res = "";
 			while(reader != null) {				
-				res += reader + "\n";
-				System.out.println("Frase: " + reader);
+				res += reader + "\n";				
 				reader = br.readLine();
 			}
+			System.out.println("> Archivo construido a texto con éxito");
 			
-			System.out.println("Frase en conjunto: ");
-			System.out.println(res);
 			return res;
 			
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch (Exception e) { 
+			System.err.println("Error! al cargar archivo en " + path);
 			e.printStackTrace();
 		}
 		

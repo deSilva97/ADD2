@@ -1,4 +1,4 @@
-package config;
+package model;
 
 public class ConfigurationConnection {
 
