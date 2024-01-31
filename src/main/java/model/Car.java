@@ -7,8 +7,19 @@ public class Car {
 	int id;
 	String brand;
 	String model;
-	String build_year;
+	int build_year;
 	long km;
+	
+	public Car(int id, String brand, String model, int build_year, long km) {
+		super();
+		this.id = id;
+		this.brand = brand;
+		this.model = model;
+		this.build_year = build_year;
+		this.km = km;
+	}
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -27,10 +38,10 @@ public class Car {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public String getBuild_year() {
+	public int getBuild_year() {
 		return build_year;
 	}
-	public void setBuild_year(String build_year) {
+	public void setBuild_year(int build_year) {
 		this.build_year = build_year;
 	}
 	public long getKm() {
@@ -59,6 +70,6 @@ public class Car {
 		return "Car [id=" + id + ", brand=" + brand + ", model=" + model + ", build_year=" + build_year + ", km=" + km
 				+ "]";
 	}
-	
+
 	
 }

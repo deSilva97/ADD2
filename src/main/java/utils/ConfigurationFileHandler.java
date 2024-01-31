@@ -9,6 +9,14 @@ import java.io.FileWriter;
 import model.ConfigurationConnection;
 
 public class ConfigurationFileHandler {
+		
+	public static final String NAME_PROTOCOL = "protocol";
+	public static final String NAME_SUBPROTOCOL = "subprotocol";
+	public static final String NAME_HOST = "host";
+	public static final String NAME_PORT = "port";
+	public static final String NAME_DATABASE = "name";
+	public static final String NAME_USER = "user";
+	public static final String NAME_PASSWORD = "password";
 	
 	static final String PROPERTIES_FILE = "properties.dat";
 	
@@ -41,15 +49,15 @@ public class ConfigurationFileHandler {
 			System.out.println("\nLeyendo configuración...");		
 			
 			String title = "--Parámetros de configuración--\n";
-			String protocol = "protocol=" + config.getProtocol() + "\n";
-			String subprotocol = "subprotocol=" + config.getSubprotocol() + "\n";;
-			String host = "host=" + config.getHost() + "\n";;
-			String port = "port=" + config.getPort() + "\n";;
-			String name = "name=" + config.getName() + "\n";;
+			String protocol = NAME_PROTOCOL + "=" + config.getProtocol() + "\n";
+			String subprotocol = NAME_SUBPROTOCOL + "=" + config.getSubprotocol() + "\n";;
+			String host = NAME_HOST + "=" + config.getHost() + "\n";;
+			String port = NAME_PORT + "=" + config.getPort() + "\n";;
+			String name = NAME_DATABASE + "=" + config.getName() + "\n";;
 			
-			String user = "user=" + config.getUser() + "\n";;
-			String password = "password=" + config.getPassword() + "\n";;	
-			
+			String user = NAME_USER + "=" + config.getUser() + "\n";;
+			String password = NAME_PASSWORD + "=" + config.getPassword() + "\n";;	
+		
 			String result = title + protocol + subprotocol + host + port + name + user + password; 
 			
 			return result;		
